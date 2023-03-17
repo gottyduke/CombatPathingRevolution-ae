@@ -87,7 +87,7 @@ namespace CombatPathing
 		static void InstallHook()
 		{
 			auto& trampoline = SKSE::GetTrampoline();
-			_Update = trampoline.write_branch<5>(REL::ID(529964).address() + 0x9, Update);  // SkyrimSE.exe+7DFF29
+			_Update = trampoline.write_branch<5>(REL::RelocationID(529964, 48092).address() + 0x9, Update);  // SkyrimSE.exe+7DFF29 // AE untested
 			INFO("{} Done!", __FUNCTION__);
 		}
 

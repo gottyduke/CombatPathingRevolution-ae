@@ -74,8 +74,8 @@ namespace CombatPathing
 			SKSE::AllocTrampoline(1 << 4);
 			auto& trampoline = SKSE::GetTrampoline();
 
-			REL::Relocation<std::uintptr_t> Base{ REL::ID(46713) };  //sub_1407D7740
-			_GetFallbackWaitTime = trampoline.write_call<5>(Base.address() + 0xEA, GetFallbackWaitTime);
+			REL::Relocation<std::uintptr_t> Base{ REL::RelocationID(46713, 47909) };  //sub_1407D7740 // AE untested
+			_GetFallbackWaitTime = trampoline.write_call<5>(Base.address() + REL::Relocate(0xEA, 0x12E), GetFallbackWaitTime);
 			INFO("{} Done!", __FUNCTION__);
 		}
 

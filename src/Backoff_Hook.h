@@ -25,7 +25,7 @@ namespace CombatPathing
 		{
 			SKSE::AllocTrampoline(1 << 6);
 
-			auto funcAddr = REL::ID(SE_FuncID).address();
+			auto funcAddr = REL::RelocationID(SE_FuncID, AE_FuncID).address(); // AE untested
 
 			Patch RelocatePointer{
 				AsPointer(funcAddr + REL::Relocate(0x1B1, 0x173)),  //1407D8E41

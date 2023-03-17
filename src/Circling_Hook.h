@@ -37,8 +37,8 @@ namespace CombatPathing
 			SKSE::AllocTrampoline(1 << 4);
 			auto& trampoline = SKSE::GetTrampoline();
 
-			REL::Relocation<std::uintptr_t> Base{ REL::ID(46731) };  //sub_1407D97D0
-			_PushBackNode = trampoline.write_call<5>(Base.address() + 0x493, PushBackNode);
+			REL::Relocation<std::uintptr_t> Base{ REL::ID(46731, 47928) };  //sub_1407D97D0 // AE untested
+			_PushBackNode = trampoline.write_call<5>(Base.address() + REL::Relocate(0x493, 0xE1C), PushBackNode);
 			INFO("{} Done!", __FUNCTION__);
 		}
 
@@ -164,10 +164,10 @@ namespace CombatPathing
 		{
 			SKSE::AllocTrampoline(1 << 4);
 
-			REL::Relocation<std::uintptr_t> WithinHeadingAngleBase{ REL::ID(46720) };
+			REL::Relocation<std::uintptr_t> WithinHeadingAngleBase{ REL::RelocationID(46720, 47916) }; // AE untested
 
 			auto& trampoline = SKSE::GetTrampoline();
-			_WithinHeadingAngle = trampoline.write_call<5>(WithinHeadingAngleBase.address() + 0x366, WithinHeadingAngle);
+			_WithinHeadingAngle = trampoline.write_call<5>(WithinHeadingAngleBase.address() + REL::Relocate(0x366, 0x16A), WithinHeadingAngle);
 
 			INFO("{} Done!", __FUNCTION__);
 		}
