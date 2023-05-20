@@ -119,11 +119,25 @@ using namespace REL::literals;
 // DKUtil
 #include "DKUtil/Logger.hpp"
 
+inline void BADCALL()
+{
+	ERROR("This should not be called!");
+}
+
 template <int id, typename T, typename... Args>
 T _generic_foo(Args... args)
 {
+	BADCALL();
 	using func_t = T(Args...);
 	REL::Relocation<func_t> func{ REL::ID(id) };
+	return func(std::forward<Args>(args)...);
+}
+
+template <int idSE, int idAE, typename T, typename... Args>
+T _generic_foo_rel(Args... args)
+{
+	using func_t = T(Args...);
+	REL::Relocation<func_t> func{ REL::RelocationID(idSE, idAE) };
 	return func(std::forward<Args>(args)...);
 }
 

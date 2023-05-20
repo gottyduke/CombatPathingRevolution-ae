@@ -12,7 +12,7 @@ namespace CombatPathing
 	static float GetCircleChance(RE::Character* a_character)
 	{
 		//sub_140845070
-		return _generic_foo<49720, float, RE::Character*>(a_character);
+		return _generic_foo_rel<49720, 50647, float, RE::Character*>(a_character);
 	}
 
 	static bool WithinCricleRange(RE::Character* me, RE::Character* he)

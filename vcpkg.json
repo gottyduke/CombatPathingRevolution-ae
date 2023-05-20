@@ -1,21 +1,24 @@
 {
-    "name":  "combatpathingrevolution",
-    "version-string":  "0.30.0",
-    "description":  "",
-    "license":  "MIT",
-    "dependencies": [
-        "effolkronium-random",
-        "rsm-binary-io",
-        "simpleini",
-        "spdlog",
-        "nlohmann-json",
-        "rapidcsv",
-        "tomlplusplus",
-        "xbyak"
-      ],
-    "features":  {
-                     "mo2-install":  {
-                                         "description":  "Combat Pathing Revolution"
-                                     }
-                 }
+  "name": "scar",
+  "version-string": "1.0.0",
+  "description": "",
+  "license": "MIT",
+  "dependencies": [
+    "fast-cpp-csv-parser",
+    "fmt",
+    "rsm-binary-io",
+    "rapidcsv",
+    "spdlog",
+    "nlohmann-json",
+    "simpleini",
+    "tomlplusplus",
+    "xbyak",
+    "effolkronium-random",
+    "glm"
+  ],
+  "features": {
+    "mo2-install": {
+      "description": "SCAR"
+    }
+  }
 }

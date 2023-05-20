@@ -36,7 +36,7 @@ namespace CombatPathing
 			a_extradata->func1 = RecalculateBackoffChance;
 			a_extradata->func2 = nullptr;
 
-			static REL::Relocation<decltype(WrapToRandomNode)> WrapToRandomNode_New{ REL::ID(46641) };
+			static REL::Relocation<decltype(WrapToRandomNode)> WrapToRandomNode_New{ REL::RelocationID(46641, 47845) }; // AE untested
 			return a_array = WrapToRandomNode_New(a_array, a_name, a_extradata, a_node); // ae change : array value is changed in-place instead of returning
 		} else {
 			ERROR("GetBackoffChance Redirect fail!");
