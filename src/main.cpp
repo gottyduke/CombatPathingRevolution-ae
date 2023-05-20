@@ -7,6 +7,7 @@ DLLEXPORT constinit auto SKSEPlugin_Version = []() noexcept {
 	data.PluginName(Plugin::NAME);
 	data.AuthorName(Plugin::AUTHOR);
 	data.UsesAddressLibrary(true);
+	data.HasNoStructUse(true);
 
 	return data;
 }();
